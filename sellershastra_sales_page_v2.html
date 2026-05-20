@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Courier+Prime:wght@400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#D4AF37;--navy:#08081C;--teal:#5DCAA5;--coral:#F09595;--dim:#888780}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:#fff;font-family:'Courier Prime',monospace;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--gold)}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+.gold-line{height:.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+section{padding:48px 20px;max-width:620px;margin:0 auto}
+.playfair{font-family:'Playfair Display',Georgia,serif}
+.label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:14px}
+.chapter-row{display:flex;gap:12px;padding:12px 10px;border-bottom:.5px solid rgba(255,255,255,.06);cursor:pointer;border-radius:3px;transition:background .2s;align-items:flex-start}
+.chapter-row:hover{background:rgba(212,175,55,.05)}
+.ch-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:7px;display:none}
+.chapter-row.open .ch-desc{display:block}
+.buy-btn{display:block;background:var(--gold);color:var(--navy);font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:18px 32px;border-radius:2px;text-decoration:none;text-align:center;transition:all .2s ease;border:none;cursor:pointer;width:100%}
+.buy-btn:hover{background:#C49820;transform:translateY(-1px);box-shadow:0 8px 28px rgba(212,175,55,.28)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div style="border-bottom:.5px solid rgba(212,175,55,.2);padding:14px 22px;display:flex;align-items:center;gap:12px;position:sticky;top:0;background:rgba(8,8,28,.97);backdrop-filter:blur(8px);z-index:100">
+  <svg width="28" height="33" viewBox="0 0 82 96" xmlns="http://www.w3.org/2000/svg"><polygon points="41,4 78,48 41,48" fill="#E8B830"/><polygon points="4,48 41,4 41,48" fill="#B8940C"/><polygon points="78,48 41,92 41,48" fill="#C49820"/><polygon points="41,92 4,48 41,48" fill="#907010"/><polygon points="41,4 78,48 41,92 4,48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  <div>
+    <div style="font-size:9px;letter-spacing:4px;color:rgba(255,255,255,.4);text-transform:uppercase">Seller</div>
+    <div style="font-size:15px;letter-spacing:2px;color:var(--gold);font-weight:700;text-transform:uppercase;line-height:1;margin-top:-1px">Shastra</div>
+  </div>
+  <div style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.3)">Amazon India Guide</div>
+</div>
+
+<!-- HERO -->
+<section style="padding:56px 20px 40px;text-align:center">
+  <div class="fade label" style="color:var(--gold)">◆ &nbsp;The SellerShastra Blueprint&nbsp; ◆</div>
+  <h1 class="fade playfair" style="font-size:clamp(24px,7vw,42px);font-weight:900;line-height:1.18;margin-bottom:16px">
+    The Complete Guide to Building a Profitable
+    <span style="color:var(--gold)"> Jewellery Business</span> on Amazon India
+  </h1>
+  <p class="fade" style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:28px">
+    Written by a real Amazon India jewellery seller — not a YouTuber.<br>Real mistakes. Real ₹ numbers. Real fixes. 75+ pages. Zero fluff.
+  </p>
+
+  <div class="fade" style="display:flex;margin-bottom:32px;border:.5px solid rgba(212,175,55,.18);border-radius:4px;overflow:hidden">
+    <div style="flex:1;padding:14px 8px;text-align:center;border-right:.5px solid rgba(212,175,55,.18)">
+      <div class="playfair" style="font-size:26px;color:var(--gold);font-weight:700">15</div>
+      <div style="font-size:9px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-top:3px">Chapters</div>
+    </div>
+    <div style="flex:1;padding:14px 8px;text-align:center;border-right:.5px solid rgba(212,175,55,.18)">
+      <div class="playfair" style="font-size:26px;color:var(--gold);font-weight:700">4</div>
+      <div style="font-size:9px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-top:3px">Bonuses</div>
+    </div>
+    <div style="flex:1;padding:14px 8px;text-align:center;border-right:.5px solid rgba(212,175,55,.18)">
+      <div class="playfair" style="font-size:26px;color:var(--gold);font-weight:700">75+</div>
+      <div style="font-size:9px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-top:3px">Pages</div>
+    </div>
+    <div style="flex:1;padding:14px 8px;text-align:center">
+      <div class="playfair" style="font-size:26px;color:var(--gold);font-weight:700">₹0</div>
+      <div style="font-size:9px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-top:3px">Theory</div>
+    </div>
+  </div>
+  <a href="#buy" class="buy-btn fade" style="max-width:300px;margin:0 auto 10px">Get the Blueprint — ₹2,000</a>
+  <div class="fade" style="font-size:10px;color:rgba(255,255,255,.25)">Instant PDF · One-time · No subscription</div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- REAL NUMBERS -->
+<section>
+  <div class="fade label" style="color:var(--teal)">Real Numbers — Not Theory</div>
+  <h2 class="fade playfair" style="font-size:clamp(20px,5vw,28px);font-weight:700;margin-bottom:8px;line-height:1.3">
+    ₹200 product cost.<br><span style="color:var(--gold)">₹540 profit per sale.</span>
+  </h2>
+  <p class="fade" style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:24px">Amazon shows 75% OFF on this listing. Here's the exact math:</p>
+
+  <div class="fade" style="background:rgba(212,175,55,.04);border:.5px solid rgba(212,175,55,.2);border-radius:4px;padding:22px;margin-bottom:16px">
+    <div style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px">Product Pricing Breakdown — Real Numbers</div>
+    <div id="rows"></div>
+  </div>
+
+  <div class="fade" style="background:rgba(212,175,55,.06);border:.5px solid rgba(212,175,55,.3);border-radius:3px;padding:14px">
+    <div style="font-size:11px;color:var(--gold);font-weight:700;margin-bottom:6px">🔑 The MRP Method</div>
+    <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.8">MRP ₹4,000 → Selling Price ₹989 → Amazon auto-displays <strong style="color:var(--gold)">75% OFF</strong>. Then the 5% coupon shows extra savings on top. This is 100% legitimate — it's how the pricing formula works. Chapter 7 covers this fully.</div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- MISTAKES -->
+<section>
+  <div class="fade label" style="color:var(--coral)">Chapter 14 Preview</div>
+  <h2 class="fade playfair" style="font-size:clamp(19px,4vw,26px);font-weight:700;margin-bottom:24px">15 Mistakes That Cost Real Money</h2>
+  <div id="mistakes"></div>
+  <div class="fade" style="margin-top:16px;padding:12px 14px;background:rgba(212,175,55,.04);border:.5px solid rgba(212,175,55,.14);border-radius:3px">
+    <span style="font-size:11px;color:rgba(255,255,255,.35)">+ 10 more mistakes with exact ₹ cost and the fix — inside the full Blueprint.</span>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- CHAPTERS -->
+<section>
+  <div class="fade label" style="color:var(--gold)">Inside the Blueprint</div>
+  <h2 class="fade playfair" style="font-size:clamp(19px,4vw,26px);font-weight:700;margin-bottom:24px">15 Chapters. Everything You Need.</h2>
+  <div id="chlist"></div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- BONUSES -->
+<section>
+  <div class="fade label" style="color:var(--teal)">Included Free — 4 Bonuses</div>
+  <div id="bonuses"></div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- BUY -->
+<section id="buy" style="text-align:center;padding-bottom:80px">
+  <svg class="fade" width="50" height="58" viewBox="0 0 82 96" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:18px"><polygon points="41,4 78,48 41,48" fill="#E8B830"/><polygon points="4,48 41,4 41,48" fill="#B8940C"/><polygon points="78,48 41,92 41,48" fill="#C49820"/><polygon points="41,92 4,48 41,48" fill="#907010"/><polygon points="41,4 78,48 41,92 4,48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  <h2 class="fade playfair" style="font-size:clamp(20px,5vw,30px);font-weight:900;margin-bottom:6px">The SellerShastra Blueprint</h2>
+  <p class="fade" style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:28px;line-height:1.9">15 Chapters · 4 Bonuses · 75+ Pages · Instant PDF</p>
+
+  <div class="fade" style="background:rgba(212,175,55,.05);border:1px solid rgba(212,175,55,.35);border-radius:6px;padding:26px;margin-bottom:22px;text-align:left">
+    <div style="text-align:center;margin-bottom:22px">
+      <div style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px">One-Time Investment</div>
+      <div class="playfair" style="font-size:52px;font-weight:900;color:var(--gold);line-height:1">₹2,000</div>
+      <div style="font-size:10px;color:rgba(255,255,255,.25);margin-top:6px">No subscription · No upsells · Instant PDF</div>
+    </div>
+
+    <div style="height:.5px;background:rgba(212,175,55,.2);margin-bottom:20px"></div>
+
+    <div style="font-size:12px;line-height:2.2;margin-bottom:24px">
+      <div style="display:flex;gap:10px"><span style="color:var(--gold)">→</span><span style="color:rgba(255,255,255,.6)">Pay via Google Pay / PhonePe / Paytm</span></div>
+      <div style="display:flex;gap:10px"><span style="color:rgba(255,255,255,.3)">·</span><span style="color:rgba(255,255,255,.6)">UPI ID: <strong style="color:var(--gold)">vermaparladh2-2@okaxis</strong></span></div>
+      <div style="display:flex;gap:10px"><span style="color:rgba(255,255,255,.3)">·</span><span style="color:rgba(255,255,255,.6)">Amount: ₹2,000</span></div>
+      <div style="display:flex;gap:10px"><span style="color:rgba(255,255,255,.3)">·</span><span style="color:rgba(255,255,255,.6)">Send payment screenshot as reply to this DM</span></div>
+      <div style="display:flex;gap:10px"><span style="color:var(--teal)">✓</span><span style="color:var(--teal)">PDF delivered to your DMs in 10 minutes</span></div>
+    </div>
+
+    <!-- REAL QR CODE -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div style="background:#EEF0F5;border-radius:12px;padding:14px;box-shadow:0 4px 20px rgba(0,0,0,.3)">
+        <img src="data:image/jpeg,/qr-code.jpeg" 
+             onerror="this.style.display='none';document.getElementById('qr-fallback').style.display='flex'"
+             style="display:none" width="170" height="170"/>
+        <img id="qr-real" src="" width="170" height="170" alt="Google Pay QR - Parladh Verma" style="display:block;border-radius:4px"/>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:2px">Parladh Verma</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.5px">Axis Bank · vermaparladh2-2@okaxis</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.25);margin-top:4px">Scan with any UPI app to pay ₹2,000</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#buy" class="buy-btn fade" style="max-width:400px;margin:0 auto 14px;display:block">Get Instant Access — ₹2,000</a>
+  <div class="fade" style="font-size:10px;color:rgba(255,255,255,.2);line-height:1.9">PDF delivered within 10 min after payment confirmation.<br>Questions? Reply to the DM where you received this link.</div>
+</section>
+
+<!-- FOOTER -->
+<div style="border-top:.5px solid rgba(212,175,55,.12);padding:20px;display:flex;flex-direction:column;align-items:center;gap:8px">
+  <svg width="24" height="28" viewBox="0 0 82 96"><polygon points="41,4 78,48 41,48" fill="#E8B830"/><polygon points="4,48 41,4 41,48" fill="#B8940C"/><polygon points="78,48 41,92 41,48" fill="#C49820"/><polygon points="41,92 4,48 41,48" fill="#907010"/><polygon points="41,4 78,48 41,92 4,48" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  <div style="font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.2);text-transform:uppercase">@sellershastra · Real experience. Real results.</div>
+</div>
+
+<script>
+// Embed the real QR code
+const b64 = "/qr-code.jpeg";
+document.getElementById('qr-real').src = 'data:image/jpeg,' + b64;
+
+// Profit rows
+const rows = [
+  ["Product Cost","₹200","#fff"],
+  ["Amazon Referral Fee","₹54","#F09595"],
+  ["Easy Ship / Shipping","₹65","#F09595"],
+  ["Packing Materials","₹80","#F09595"],
+  ["Total Costs","₹399","#F09595"],
+  ["MRP Set","₹4,000","#fff"],
+  ["Selling Price (Your Price)","₹989","#fff"],
+  ["5% Coupon Applied","₹49 off","#fff"],
+  ["Buyer Pays","₹940","#D4AF37"],
+  ["Amazon Displays","75% OFF + 5% coupon","#5DCAA5"],
+  ["NET PROFIT PER SALE","₹540","#5DCAA5"],
+];
+const rc = document.getElementById("rows");
+rows.forEach(([l,v,c],i)=>{
+  const d = document.createElement("div");
+  d.style.cssText = `display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:${i<10?".5px solid rgba(255,255,255,.06)":"none"};${i===10?"border-top:.5px solid rgba(212,175,55,.25);margin-top:6px":""}`;
+  d.innerHTML = `<span style="font-family:'Courier Prime',monospace;font-size:11px;color:${i===10||i===4||i===8||i===9?"#fff":"rgba(255,255,255,.5)"};font-weight:${i===10?700:400}">${l}</span><span style="font-family:'Playfair Display',serif;font-size:${i===10?19:13}px;color:${c};font-weight:${i===10?700:400}">${v}</span>`;
+  rc.appendChild(d);
+});
+
+// Mistakes
+const mList = [
+  "5-day handling time → Amazon silently stops showing 25 listings",
+  "Flat lay main image → CTR drops 40%+ vs model-worn at ₹400+",
+  "Copy-pasting competitor description → page 2 to page 7 in 3 days",
+  "Running PPC before listing is ready → ₹1,500+ wasted with 0 conversions",
+  "Stopping auto campaign on Day 8 → you paid for data you never read",
+];
+const mc = document.getElementById("mistakes");
+mList.forEach((m)=>{
+  const d = document.createElement("div");
+  d.className = "fade";
+  d.style.cssText = "display:flex;gap:12px;padding:11px 0;border-bottom:.5px solid rgba(255,255,255,.06);align-items:flex-start";
+  d.innerHTML = `<span style="color:#F09595;min-width:16px;font-weight:700">✗</span><span style="font-size:12px;color:rgba(255,255,255,.62);line-height:1.65">${m}</span>`;
+  mc.appendChild(d);
+});
+
+// Chapters
+const chs = [
+  ["01","The Opportunity","Why jewellery on Amazon India is still early — 2026 is the window"],
+  ["02","Seller Account Setup","Documents, KYC, and the handling time mistake that killed 25 listings"],
+  ["03","Product Research","5-point evaluation system. How I found the screw bracelet."],
+  ["04","Sourcing","Wholesale markets, IndiaMart, MOQ negotiation, supplier relationships"],
+  ["05","Product Photography","The ₹0 AI image method — 5 professional images per SKU"],
+  ["06","Listing Optimization","Title formula, 5-bullet framework, backend keywords — real before/after"],
+  ["07","Pricing Strategy","The MRP method. ₹399 floor rule. 2x profit formula. Real table."],
+  ["08","Launch System","Pre-launch checklist. Day 1 to first order. Zero-impression fix."],
+  ["09","PPC Ads","2-phase system. The ₹1,200 mistake — and what you do instead."],
+  ["10","Getting Reviews","Safe, compliant methods. Friend-family strategy explained."],
+  ["11","Orders & Returns","Safe-T claims, A-to-Z guarantee, seller health score"],
+  ["12","Festive Season Playbook","5 peak months. Prep dates. Festival keywords. 21 days early wins."],
+  ["13","Scaling to 100 Orders","When to add SKUs, FBA, Brand Registry, 100-order milestone"],
+  ["14","15 Expensive Mistakes","Every mistake. ₹ cost. Exact fix. No softening."],
+  ["15","30-Day Action Plan","Day-by-day from zero account to first order. Specific."],
+];
+const cc = document.getElementById("chlist");
+chs.forEach(([n,t,d])=>{
+  const row = document.createElement("div");
+  row.className = "chapter-row fade";
+  row.innerHTML = `<div style="font-size:11px;color:var(--gold);min-width:24px;padding-top:2px">${n}</div><div style="flex:1"><div style="font-family:'Playfair Display',serif;font-size:14px;color:#fff;font-weight:700">${t}</div><div class="ch-desc">${d}</div></div><div class="toggle-icon" style="font-size:13px;color:rgba(255,255,255,.3);padding-top:2px">+</div>`;
+  row.addEventListener("click",()=>{
+    const wasOpen=row.classList.contains("open");
+    document.querySelectorAll(".chapter-row").forEach(r=>{r.classList.remove("open");r.querySelector(".toggle-icon").textContent="+";});
+    if(!wasOpen){row.classList.add("open");row.querySelector(".toggle-icon").textContent="−";}
+  });
+  cc.appendChild(row);
+});
+
+// Bonuses
+const bs=[
+  ["50 High-Search Jewellery Keywords","Organised by product type — earrings, bangles, necklaces, sets, gifting — ready to copy into backend keywords"],
+  ["Indian Festive Calendar 2026–27","Every major occasion with prep dates, jewellery type, and peak keywords"],
+  ["25-Point Pre-Listing Checklist","Verify every element before clicking Publish — nothing missed"],
+  ["Monthly Listing Audit Framework","What to check, where to find it, and what to do when it's red"],
+];
+const bc=document.getElementById("bonuses");
+bs.forEach(([t,d])=>{
+  const el=document.createElement("div");
+  el.className="fade";
+  el.style.cssText="display:flex;gap:14px;padding:15px 0;border-bottom:.5px solid rgba(93,202,165,.1);align-items:flex-start";
+  el.innerHTML=`<div style="color:var(--teal);font-size:17px;min-width:20px;margin-top:1px">◈</div><div><div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--teal);font-weight:700;margin-bottom:5px">${t}</div><div style="font-size:11px;color:rgba(255,255,255,.48);line-height:1.7">${d}</div></div>`;
+  bc.appendChild(el);
+});
+
+// Intersection observer
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.12});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
